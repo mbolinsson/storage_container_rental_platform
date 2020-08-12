@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  height: 35vh;
+  margin: 0 10vw 2vh 10vw;
+}
+
+.h1 {
+  font-size: 3rem;
+  margin: 9rem 0 1rem 0;
+}
+
+
+
+.containerSpecs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 830px;
+}
+
+.p {
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.h2 {
+  margin-top: 5rem;
+}
