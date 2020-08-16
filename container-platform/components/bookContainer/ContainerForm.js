@@ -24,8 +24,10 @@ let initialState = {
   thereIsOneOrMoreError: false,
 };
 
-export function ContainerForm() {
+export function ContainerForm({container}) {
   const [state, setState] = useState(initialState);
+
+  console.log(container);
 
   const handleRegex = (e) => {
     const target = e.target;
@@ -113,14 +115,24 @@ export function ContainerForm() {
       state.postnummer
     ) {
       sendForm({
-        fornamn: state.fornamn,
-        efternamn: state.efternamn,
-        email: state.email,
-        personnummer: state.personnummer,
-        telefonnummer: state.telefonnummer,
-        stad: state.stad,
-        gatuAdress: state.gatuAdress,
-        postnummer: state.postnummer,
+        container: {
+          _id: container._id,
+          location: container.location,
+          number: container.containerNumber,
+          type: container.type,
+          m2: container.m2,
+          price: container.price,
+        },
+        customer: {
+          fornamn: state.fornamn,
+          efternamn: state.efternamn,
+          email: state.email,
+          personnummer: state.personnummer,
+          telefonnummer: state.telefonnummer,
+          stad: state.stad,
+          gatuAdress: state.gatuAdress,
+          postnummer: state.postnummer,
+        },
       });
     } else {
       const untouchedField = Object.entries(state);
