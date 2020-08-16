@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from "./ContainerForm.module.scss";
 import {sendForm} from "../../utils/api";
+import ReCAPTCHA from "react-google-recaptcha";
 
 let initialState = {
   fornamn: "",
@@ -22,12 +23,19 @@ let initialState = {
     postnummer: false,
   },
   thereIsOneOrMoreError: false,
+  captchaValue: null,
 };
 
 export function ContainerForm({container}) {
   const [state, setState] = useState(initialState);
 
-  console.log(container);
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setState({
+      ...state,
+      captchaValue: value,
+    });
+  }
 
   const handleRegex = (e) => {
     const target = e.target;
@@ -92,6 +100,7 @@ export function ContainerForm({container}) {
     setState({...state, thereIsOneOrMoreError: false});
 
     const isThereErros = Object.values(state.errors);
+    console.log(state);
 
     isThereErros.map((inputError) => {
       if (inputError === true) {
@@ -281,6 +290,9 @@ export function ContainerForm({container}) {
                 ></input>
               </div>
 
+              <div className={styles.inputWrapper}>
+                <ReCAPTCHA sitekey="6Lfwob8ZAAAAAH2W6B14sCeQxODHBpw8eo-2cCMa" onChange={onChange} />
+              </div>
               <div className={styles.inputWrapper}>
                 <input className={styles.submit} type="submit" value="Skicka in" />
               </div>

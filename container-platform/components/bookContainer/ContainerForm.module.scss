@@ -3,6 +3,7 @@
   height: 50vh;
   display: flex;
   flex-direction: column;
+
 }
 
 .wrapper {
@@ -19,8 +20,10 @@
   justify-content: center;
   height: 20rem;
   flex-wrap: wrap;
-  padding: 0 0 15vh 0;
+  padding: 0 0 100vh 0;
   max-width: 1000px;
+
+
 }
 
 .h1 {
@@ -37,7 +40,7 @@
     width: 22rem;
     background-color: rgba(255, 255, 255, 0.509);
     border-color: #fff;
-    border: 2px solid #fff;
+    border: none;
     transition: .2s;
     color: rgba(30, 30, 30, 0.859);
     opacity: 1;
@@ -56,7 +59,7 @@
     width: 22rem;
     background-color: rgba(252, 77, 77, 0.509);
     border-color: #fff;
-    border: 2px solid #fff;
+    border: none;
     transition: .2s;
     color: rgba(30, 30, 30, 0.859);
     opacity: 1;
@@ -77,14 +80,13 @@
 .submit {
   cursor: pointer;
   height: 3rem;
-  width: 22rem;
+  width: 22.5rem;
   background-color: #fff;
-  border: none;
+  border: 2px solid #fff;
   color: rgb(61, 142, 169);
   align-self: start;
   font-size: 25px;
   font-weight: 700;
-  border: 1px solid white;
 }
 
 @media (max-width: 1147px) {
@@ -106,5 +108,9 @@
 @media (min-width: 1148px) {
   .h1 {
     font-size: 7vh;
+  }
+
+  .form {
+    padding: 0 0 17vh 0;
   }
 }
