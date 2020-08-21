@@ -23,7 +23,7 @@ export default function locationValue() {
       try {
         setState({...state, isLoading: true});
         if (location) {
-          const response = await fetchContainers({location}); // fråga varför man inte kan sätta statet flera gånger ?
+          const response = await fetchContainers({location});
           if (response.data.length > 0) {
             setState({...state, isLoading: false, data: response.data, slotText: styles.display, noSlotText: styles.displayNone});
           } else {

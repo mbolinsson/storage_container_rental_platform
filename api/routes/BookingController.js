@@ -1,6 +1,9 @@
 const route = require("express").Router();
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
+require("es6-promise").polyfill();
+require("isomorphic-fetch");
+const token = process.env["RECAPTCHA_SERVER_KEY"];
 
 route.post("/", (req, res) => {
   async function mailMan() {
@@ -50,8 +53,42 @@ route.post("/", (req, res) => {
   mailMan().catch(console.error);
 
   const formInfo = req.body;
+
+  // reCAPTCHA validation "6Lfwob8ZAAAAAFf4nhXDJILOoywe5wvcV0TzCtFo"
+
+  async function checkIfHuman() {
+    const RECAPTCHA_SERVER_KEY = process.env.RECAPTCHA_SERVER_KEY;
+    const humanKey = req.body.captchaValue;
+    try {
+      const isHuman = await fetch(`https://www.google.com/recaptcha/api/siteverify`, {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+        },
+        body: `secret=${token}&response=${humanKey}`,
+      })
+        .then((res) => res.json())
+        .then((json) => json.success)
+        .catch((err) => {
+          throw new Error(`Error in Google Siteverify API. ${err.message}`);
+        });
+
+      if (humanKey === null || !isHuman) {
+        console.log(humanKey);
+        throw new Error(`YOU ARE NOT A HUMAN.`);
+      }
+
+      // The code below will run only after the reCAPTCHA is succesfully validated.
+      console.log("SUCCESS!");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
+  checkIfHuman();
+
   res.status(200);
-  console.log(formInfo);
 });
 
 module.exports = route;

@@ -103,6 +103,7 @@ export function ContainerForm({container}) {
     console.log(state);
 
     isThereErros.map((inputError) => {
+      ``;
       if (inputError === true) {
         console.log("input error");
         setState({...state, thereIsOneOrMoreError: true});
@@ -142,6 +143,7 @@ export function ContainerForm({container}) {
           gatuAdress: state.gatuAdress,
           postnummer: state.postnummer,
         },
+        captchaValue: state.captchaValue,
       });
     } else {
       const untouchedField = Object.entries(state);

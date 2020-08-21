@@ -8,26 +8,6 @@ const initialState = {
 };
 
 export function ShowContainer({container}) {
-  // const [state, setState] = useState(initialState);
-  // const router = useRouter();
-  // const id = router.query.bookContainer;
-
-  // useEffect(() => {
-  //   async function fetch() {
-  //     try {
-  //       if (id) {
-  //         const response = await getContainer(id);
-  //         if (response.data) {
-  //           setState({...state, container: response.data});
-  //         }
-  //       }
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  //   fetch();
-  // }, [id]);
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.containerSpecs}>

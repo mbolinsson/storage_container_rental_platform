@@ -3,11 +3,12 @@ const app = express();
 const port = process.env.port || 3400;
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+require("dotenv").config();
 
 const serverUri = "http://localhost:" + port;
 const mongoUri = "mongodb+srv://Marcus:sewdsewd77@containerplatformcluste.kahvs.mongodb.net/Container-Platform-DB?retryWrites=true&w=majority";
 
-app.listen(port, () => console.log("listening on" + serverUri));
+app.listen(port, () => console.log("listening on " + serverUri));
 
 mongoose
   .set("useCreateIndex", true)
@@ -32,3 +33,5 @@ app.use(bodyParser.json());
 
 app.use("/api/containers", require("./routes/ContainerController"));
 app.use("/api/booking", require("./routes/BookingController"));
+
+console.log(process.env);

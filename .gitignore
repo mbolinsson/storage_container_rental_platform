@@ -25,6 +25,7 @@ container-platform/yarn-debug.log*
 container-platform/yarn-error.log*
 
 # local env files
+api/.env
 container-platform/.env.local
 container-platform/.env.development.local
 container-platform/.env.test.local

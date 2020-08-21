@@ -1,6 +1,6 @@
 .main {
   padding: 0 10vw;
-  color: #fff;
+  color: rgb(46, 46, 46);
   height: 87vh;
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   height: 4vh;
   width: 30rem;
   background-color: transparent;
-  border-color: #fff;
+  border-color: rgb(46, 46, 46);
   color: #fff;
   font-size: 1.5vh;
   font-weight: 700;
@@ -52,15 +52,15 @@
 }
 
 .button {
-  transition: 1s;
+  transition: .3s;
   cursor: pointer;
   display: block;
   height: 4vh;
   width: 30rem;
   background-color: #fff;
   border: none;
-  border-radius: 1px;
-  color: rgb(61, 142, 169);
+  border-radius: 2.2px;
+  color: rgb(46, 46, 46);
   font-size: 25px;
   font-weight: 700;
   margin: 2vh 0 0 .36vw;
@@ -69,8 +69,8 @@
 }
 
 .button:hover {
-  background-color: transparent;
-  color: #fff;
+  background-color: #D5D4D1;
+  color: rgb(61, 142, 169);
 }
 
 @media (min-width: 1350px) {
