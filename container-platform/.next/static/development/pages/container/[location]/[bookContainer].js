@@ -1010,7 +1010,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(f
 
 /***/ }),
 
-/***/ 6:
+/***/ 4:
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fcontainer%2F%5Blocation%5D%2F%5BbookContainer%5D&absolutePagePath=%2FUsers%2Fmarcusbolinsson%2FProjects%2Fsbfastigheter%2Fcontainer-platform%2Fpages%2Fcontainer%2F%5Blocation%5D%2F%5BbookContainer%5D%2Findex.js ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/
@@ -1033,4 +1033,4 @@ eval("module.exports = dll_5030f387d328e4415785;//# sourceURL=[module]\n//# sour
 
 /***/ })
 
-},[[6,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
