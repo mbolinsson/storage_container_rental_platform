@@ -7,11 +7,9 @@ export function fetchContainers(body) {
 }
 
 export function getContainer(id) {
-  console.log(id);
   return axios.get(`${BASE_URL}/containers/${id}`);
 }
 
 export function sendForm(formInfo) {
-  console.log(formInfo);
   return axios.post(`${BASE_URL}/booking`, formInfo);
 }
